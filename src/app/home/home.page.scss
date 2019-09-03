@@ -1,0 +1,59 @@
+ion-content{
+    --background: linear-gradient(135deg, rgb(211, 162, 28), rgb(235, 192, 76), rgb(228, 198, 116));
+}
+
+ion-card{
+    --background: #fff;
+    
+}
+
+.card-menu{
+    position: relative;
+}
+
+.btn-card-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 2px 0 0;
+    font-size: 35px;
+    color: #fff;
+}
+
+ion-card-subtitle{
+    margin-top: 10px;
+}
+
+ion-searchbar{
+    --background: #fff;
+
+}
+ion-card.card-transparent{
+    background: transparent;
+    ion-card-title{
+        color:white;
+        text-align: center;
+        font-family: Times;
+
+
+    } 
+    box-shadow:none;
+    
+    img{
+        width:30%;
+    }
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.precoPizza{
+    --color: #000;
+}
+
+.descPizza{
+    text-transform: inherit;
+}
+
+ion-fab{
+    position: fixed;
+}

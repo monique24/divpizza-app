@@ -1,0 +1,65 @@
+<!-- cabecalho do aplicativo -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title align-center>
+      DivPizza - Início
+    </ion-title>
+    <!-- <ion-buttons slot='primary'>
+      <ion-button [routerLink]="['/add-pizza']">
+        <ion-icon name='add'></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<!-- corpo do aplicativo -->
+<ion-content>
+  <div class='ion-padding'>
+
+    <ion-searchbar placeholder='Nome da pizza'></ion-searchbar>
+
+    <!-- card das pizzas -->
+    <div *ngIf='catalogo !== undefined && catalogo.length > 0'>
+      <div *ngFor='let pizza of catalogo'>
+        <ion-card>
+          <div class='card-menu'>
+            <img src='../assets/pizza3.jpg'> <!-- {{pizza.foto}} -->
+            <ion-icon name='arrow-dropdown' class="btn-card-menu" (click)='exibirOps(pizza.id, pizza.nomePizza)'></ion-icon>
+          </div>
+          <ion-card-content>
+            <ion-card-title>
+              {{pizza.nomePizza}}
+            </ion-card-title>
+            <ion-card-subtitle class="descPizza">
+              {{pizza.descricaoPizza}}
+            </ion-card-subtitle>
+            <ion-card-subtitle color='dark'>
+              <h1 text-right>R${{pizza.precoPizza}}</h1>
+            </ion-card-subtitle>
+          </ion-card-content>
+          <ion-row no-padding>
+            <ion-col>
+              <ion-button color='danger' expand='block'>
+                Comprar<ion-icon name='cart' slot='end'></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        
+      </div>
+    </div>
+   <div *ngIf="catalogo.length ==0">
+     <ion-card class="card-transparent">
+       <img src="../assets/nao-tem-pizza.png"/>
+       <ion-card-title>
+         Não há pizzas no momento
+       </ion-card-title>
+     </ion-card>
+   </div>
+    <ion-fab horizontal="start" vertical="bottom" slot="fixed" [routerLink]="['/add-pizza']">
+      <ion-fab-button color="danger">
+        <ion-icon name="pizza"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>
