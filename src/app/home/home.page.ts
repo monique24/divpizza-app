@@ -77,5 +77,8 @@ export class HomePage {
 
     await alertDelete.present()
   }
-
+  comprar(id){
+   console.log(id);
+   this.route.navigate(['comprar-pizza',id])
+  }
 }
